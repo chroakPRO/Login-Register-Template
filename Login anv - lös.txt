@@ -1,0 +1,2 @@
+Användarenamn = Admin
+Password = !"#Nti123
