@@ -1,0 +1,38 @@
+<?php
+require_once 'header.php';
+
+
+$profileid = $_GET['id'];
+$sessionid = $_SESSION['id'];
+$sessionuid = $_SESSION['uid'];
+$sessiongroup = $_SESSION['group'];
+
+
+if ($sessionuid == $profileid || $sessiongroup == "admin") {
+?>
+    <div class="wrapper-main">
+        <section class="section-default">
+	<?php 
+        echo "<p>This is your username:$sessionuid <a href='edit.inc.php?click=editsubmit&id=".$sessionuid."'>  [Change Username!]</a></p>";
+        echo "<br>";
+        echo "If your an admin or the correct user u will be able to edit this!"
+	?>
+    </section>
+    </div>
+
+<?php
+    }
+else {
+	?>
+    <div class="wrapper-main">
+        <section class="section-default">
+	<?php 
+        echo "<p>This is the username of the profile: $profileid</p>";
+        echo "If your an admin or the correct user u will be able to edit this! otherwise u will only to be able to display it."
+	?>
+    </section>
+    </div>
+
+<?php
+}
+    

@@ -18,12 +18,18 @@ require "header.php";
     -->
 	<?php
 	if (!isset($_SESSION['id'])) {
-		echo '<p class="login-status">You are logged out!</p>';
+        echo '<p class="login-status">You are logged out!</p>';  
 	}
 	else if (isset($_SESSION['id'])) {
-		echo '<p class="login-status">You are logged in!</p>';
-	}
-	?>
+        echo '<p class="login-status">You are logged in!</p>';
+       
+    }
+    
+    if (isset($_GET["submit"])) {
+        if ($_GET["submit"] == "success") {
+            echo "<p>You have successfully changed your username, <br> please logout and log back in again with your new username!</p>";
+        }}
+  ?>
 
 
     </section>

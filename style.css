@@ -9,7 +9,7 @@ button {
 }
 
 body {
-  background-color: rgb(50,50,50);
+  background-color: rgb(255,255,255);
 }
 
 .wrapper-main {
@@ -67,17 +67,17 @@ header {
   text-transform: uppercase;
 }
 
-.header-login {
+.header-loginn {
   height: 60%;
   display: flex;
   flex-direction: row;
 }
 
-.header-login form {
+.header-loginn form {
   height: 100%;
 }
 
-.header-login form input {
+.header-loginn form input {
   height: 100%;
   width: 160px;
   padding: 0 15px;
@@ -89,7 +89,7 @@ header {
   font-family: arial;
 }
 
-.header-login form button {
+.header-loginn form button {
   height: 100%;
   padding: 0 10px;
   border: none;
@@ -125,8 +125,7 @@ main {
 .section-default {
   width: 100%;
   padding: 20px;
-  border-radius: 6px;
-  background-color: rgb(50,50,50);
+  background-color: lightgrey;
 }
 
 .login-status {
@@ -204,4 +203,11 @@ h3 {
   font-size: 16px;
   color: green;
   text-align: center;
+}
+
+table, th, td{
+  border: 1.5px solid black;
+}
+th, td {
+  padding: 5px;
 }

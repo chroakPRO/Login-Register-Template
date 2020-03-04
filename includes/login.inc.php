@@ -13,8 +13,8 @@ if (isset($_POST['login-submit'])) {
   require 'dbh.inc.php';
 
 	// Här hämtar vi information från signup.php, så vi kan använda den.
-  $nameuser = $_POST['nameuser'];
-  $password = $_POST['pwd'];
+  $nameuser = htmlspecialchars($_POST['nameuser']);
+  $password = htmlspecialchars($_POST['pwd']);
 
 
 	/*
@@ -63,9 +63,13 @@ if (isset($_POST['login-submit'])) {
         else if ($pwdCheck == true) {
           session_start();
           /*Vi  skapar sedan session id, för att kunna bestämma vem du är etc, detta kan man sedan använda för att
-			skapa profil etc. */
-          $_SESSION['id'] = $row['idUser'];
-          $_SESSION['uid'] = $row['nameUser'];
+      skapa profil etc. */
+          $sessionuid = $row['NameUser'];
+          $sessionid = $row['idUser'];
+          $sessiongroup = $row['UserGroup'];
+          $_SESSION['group'] = $sessiongroup;
+          $_SESSION['id'] = $sessionid;
+          $_SESSION['uid'] = "$sessionuid";
 
           // Vi skickar sedan tillbaka dom till framsidan.
           header("Location: ../index.php?login=success");

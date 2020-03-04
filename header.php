@@ -9,6 +9,7 @@
 
   require "includes/dbh.inc.php";
 
+
 ?>
 
 
@@ -18,7 +19,8 @@
     <meta charset="utf-8">
     <meta name="description" content="NTI">
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <title></title>
+    <link href="/assets/img/brand/favivcon.png" rel="icon" type="image/png">
+    <title>Christopher Ek. Login App</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -29,10 +31,22 @@
           <img src="img/logo.png" alt="NTI LOGO">
         </a>
         <ul>
-          <li><a href="index.php">Hem</a></li>
+          <li><a href=/index.php>Real home!</a></li>
+		      <li><a href="index.php">App Home</a></li>
+          <li><a href="users.php">Profiles</a></li>
+
+          <?php
+          if (!isset($_SESSION['id'])) {
+          echo "";
+          }
+          else if (isset($_SESSION['id'])) { 
+            $username = $_SESSION['uid'];
+            echo "<li><a href='profile-page.php?click=profilename&id=". $_SESSION['uid'] ."'> Profile-Page </a></li>";
+          }
+          ?>
         </ul>
       </nav>
-      <div class="header-login">
+      <div class="header-loginn">
         <!--
        Här gör vi samma sak som vi gör i index,
        med hjälp av session kan vi bestämma om vi ska visa inloggning eller utloggning.
@@ -52,6 +66,7 @@
     echo '<form action="includes/logout.inc.php" method="post">
         <button type="submit" name="login-submit">Logout</button>
     </form>';
+
     }
     ?>
     </div>
