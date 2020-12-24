@@ -14,7 +14,7 @@ if (isset($_POST['login-submit'])) {
 
 	// Här hämtar vi information från signup.php, så vi kan använda den.
   $nameuser = htmlspecialchars($_POST['nameuser']);
-  $password = htmlspecialchars($_POST['pwd']);
+  $password = $_POST['pwd'];
 
 
 	/*

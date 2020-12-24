@@ -1,11 +1,8 @@
 <?php
 
-
-require '/var/www/html/apps/appenv.php';
-
 $dBServername = "localhost";
 $dBUsername = "root";
-$dBPassword = "$password";
+$dBPassword = "";
 $dBName = "apps";
 
 // skapar anslutningen
